@@ -1,8 +1,5 @@
 package fill;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import model.BufferedImageHelper;
 import model.Edge;
 import model.Point;
@@ -11,16 +8,15 @@ import renderer.LineRenderer;
 import renderer.PolygonRenderer;
 import renderer.Renderer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ScanLine extends Renderer {
     private List<Edge> edges;
     private List<Integer> intersections;
     private LineRenderer lr;
     private PolygonRenderer pr;
 
-    /**
-     * Create new ScanLine.
-     * @param img
-     */
     public ScanLine(BufferedImageHelper img) {
         super(img);
         edges = new ArrayList<>();
@@ -89,9 +85,6 @@ public class ScanLine extends Renderer {
         pr.draw(polygon);
     }
 
-    /**
-     * Sort intersections with insertion sort.
-     */
     private void sort() {
         for(int i=1;i<intersections.size();i++){
             int temp = intersections.get(i);

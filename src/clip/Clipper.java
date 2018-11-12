@@ -8,22 +8,12 @@ public class Clipper {
     Polygon clArea;
     Polygon out;
 
-    /**
-     * Create new Clipper.
-     *
-     * @param clippingArea
-     */
     public Clipper(Polygon clippingArea) {
         this.clArea = clippingArea;
 
         out = new Polygon();
     }
 
-    /**
-     * Clip in polygon with clipping area.
-     * @param in polygon for clipping
-     * @return clipped polygon
-     */
     public Polygon clip(Polygon in) {
         Polygon temp = new Polygon(in.getPoints());
 

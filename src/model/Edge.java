@@ -25,11 +25,6 @@ public class Edge {
         return (y >= a.getY() && y < b.getY());
     }
 
-    /**
-     * Get oriented edge (Ay < By).
-     *
-     * @return oriented edge
-     */
     public Edge getOriented() {
         if(a.getY() < b.getY()) {
             return new Edge(a, b);
@@ -38,12 +33,6 @@ public class Edge {
         }
     }
 
-    /**
-     * Get intersection (x) for this edge and y.
-     *
-     * @param y
-     * @return counted x
-     */
     public int getIntersection(int y) {
         float k = ((b.getX() - a.getX()) / (b.getY() - a.getY()));
         float q = a.getX() - (k * a.getY());
@@ -51,14 +40,6 @@ public class Edge {
         return (int)((k * y) + q);
     }
 
-    /**
-     * Get intersection for two edges.
-     * This edge and edge p1-p2.
-     *
-     * @param p1
-     * @param p2
-     * @return Point intersection
-     */
     public Point getIntersection(Point p1, Point p2) {
         double denominator = (
                 (((p1.getX() - p2.getX())
@@ -97,12 +78,7 @@ public class Edge {
         return new Point((float)x, (float)y);
     }
 
-    /**
-     * Get if is point inside.
-     *
-     * @param point
-     * @return is point inside
-     */
+
     public boolean isInside(Point point) {
         double result = (
                 (point.getX() - a.getX())
